@@ -1,4 +1,6 @@
-import Flower.Flower;
+package singleton;
+
+import singleton.Flowers.Flower;
 
 import java.util.Map;
 
@@ -13,18 +15,18 @@ public class Box {
         kwiaty = customer.getShoppingCart().getKwiaty();
     }
 
-    public void włozenieListyKwiatówDoPudełka(Map<Flower, Integer> kwiaty) {
+    public void listOfFlowersInABox(Map<Flower, Integer> kwiaty) {
         this.kwiaty = kwiaty;
     }
 
     @Override
     public String toString() {
         if (kwiaty.size() == 0) {
-            return "wózek włąsciela " + customer.getImie() + " --- pusty";
+            return "Trolley " + customer.getName() + " --- empty";
 
         } else {
             StringBuilder builder = new StringBuilder();
-            builder.append("Wózek włąciciela " + customer.getImie() + "\n");
+            builder.append("Owner trolley  " + customer.getName() + "\n");
             for (Flower flower : kwiaty.keySet()) {
                 builder.append(flower + "\n");
 

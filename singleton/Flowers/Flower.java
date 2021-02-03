@@ -1,19 +1,20 @@
-package Flower;
+package singleton.Flowers;
+
+
+import singleton.PriceList;
 
 public abstract class Flower {
 
     private int howManyFlowers;
     private String name;
-    private FlowerColor color;
     private PriceList priceList;
+    private FlowerColor flowerColor;
 
 
-
-
-    public Flower(int howManyFlowers, String name, FlowerColor color) {
+    public Flower(int howManyFlowers, String name, FlowerColor flowerColor) {
         this.howManyFlowers = howManyFlowers;
         this.name = name;
-        this.color = color;
+        this.flowerColor = flowerColor;
         priceList = PriceList.getInstance();
     }
 
@@ -25,8 +26,8 @@ public abstract class Flower {
         return name;
     }
 
-    public FlowerColor getColor() {
-        return color;
+    public FlowerColor getFlowerColor() {
+        return flowerColor;
     }
 
     public PriceList getPriceList() {
@@ -37,10 +38,11 @@ public abstract class Flower {
     public String toString() {
 
         Integer price = getPriceList().get(getName());
-        if(price == null ){
-            price=-1;}
-        return getName() + ". kolor: " +getColor() +
-                ", ilość " + getHowManyFlowers()
-                + " , cena " + price;
+        if (price == null) {
+            price = -1;
+        }
+        return getName() + " Color: " + getFlowerColor() +
+                ", quantity " + getHowManyFlowers()
+                + " , price " + price;
     }
 }

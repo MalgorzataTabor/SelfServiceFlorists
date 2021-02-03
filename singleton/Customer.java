@@ -1,15 +1,17 @@
-import Flower.Flower;
+package singleton;
+
+import singleton.Flowers.Flower;
 
 import java.util.HashMap;
 
 public class Customer {
     private ShoppingCart shoppingCart;
-    private String imie;
+    private String name;
     private int money;
 
     public Customer(String imie, int money) {
         shoppingCart = new ShoppingCart(this);
-        this.imie = imie;
+        this.name = imie;
         this.money = money;
 
     }
@@ -18,8 +20,8 @@ public class Customer {
         return shoppingCart;
     }
 
-    public String getImie() {
-        return imie;
+    public String getName() {
+        return name;
     }
 
     public int getMoney() {
@@ -36,9 +38,9 @@ public class Customer {
         money -= shoppingCart.obliczCeneZakupow();
     }
 
-    public void pack(Box pudełkoKlienta) {
+    public void pack(Box customerBox) {
 
-        pudełkoKlienta.włozenieListyKwiatówDoPudełka(getShoppingCart().getKwiaty());
+        customerBox.listOfFlowersInABox(getShoppingCart().getKwiaty());
         shoppingCart.setKwiaty(new HashMap<>());
     }
 }

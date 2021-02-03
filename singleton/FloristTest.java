@@ -1,11 +1,10 @@
-import Flower.Freesia;
-import Flower.Lilac;
-import Flower.Orchid;
-import Flower.Rose;
+package singleton;
+
+import singleton.Flowers.*;
 
 public class FloristTest {
 
-    // tu definicja metody valueOf(Box pudelko, String kolor) zwracającej
+    // tu definicja metody valueOf(singleton.Box pudelko, String kolor) zwracającej
     // sumaryczną wartość kwiatów o podanym kolorzez, znajdujących się w pudełku
 
     public static void main(String[] args) {
@@ -19,7 +18,7 @@ public class FloristTest {
         // Bierze różne kwiaty: 5 róż, 5 piwonii, 3 frezje, 3 bzy
         janek.get(new Rose(5));
         janek.get(new Orchid(5));
-        janek.get(new Freesia(3));
+        janek.get(new Freesia(3, FlowerColor.BLACK));
         janek.get(new Lilac(3));
 
 

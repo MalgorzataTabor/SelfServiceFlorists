@@ -1,6 +1,7 @@
+package singleton;
 
 
-import Flower.Flower;
+import singleton.Flowers.Flower;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -13,7 +14,7 @@ public class ShoppingCart {
 
 
     public ShoppingCart(Customer owner) {
-        kwiaty = new HashMap<>();
+        kwiaty = new HashMap<Flower, Integer>();
         this.owner = owner;
     }
 
@@ -57,11 +58,11 @@ public class ShoppingCart {
     public String toString() {
 
         if (kwiaty.size() == 0) {
-            return "Wózek klienta " + owner.getImie() + " jest pusty ";
+            return "Wózek klienta " + owner.getName() + " jest pusty ";
         } else {
 
             StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.append("Wózek klienra " + owner.getImie() + "\n");
+            stringBuilder.append("Wózek klienra " + owner.getName() + "\n");
 
             for (Flower flower : kwiaty.keySet()) {
                 stringBuilder.append(flower + "\n");
